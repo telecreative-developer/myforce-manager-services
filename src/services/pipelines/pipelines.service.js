@@ -9,6 +9,7 @@ module.exports = function (app) {
 
   const options = {
     name: 'pipelines',
+    id: 'id_pipeline',
     Model,
     paginate
   };

@@ -9,6 +9,7 @@ module.exports = function (app) {
 
   const options = {
     name: 'users',
+    id: 'id',
     Model,
     paginate
   };
