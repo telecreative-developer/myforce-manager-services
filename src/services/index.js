@@ -7,6 +7,12 @@ const pics = require('./pics/pics.service.js');
 const questions = require('./questions/questions.service.js');
 const answers = require('./answers/answers.service.js');
 
+const teamUpdates = require('./team-updates/team-updates.service.js');
+
+const points = require('./points/points.service.js');
+
+const uploadAvatarManager = require('./upload-avatar-manager/upload-avatar-manager.service.js');
+
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(managers);
@@ -17,4 +23,7 @@ module.exports = function (app) {
   app.configure(pics);
   app.configure(questions);
   app.configure(answers);
+  app.configure(teamUpdates);
+  app.configure(points);
+  app.configure(uploadAvatarManager);
 };
