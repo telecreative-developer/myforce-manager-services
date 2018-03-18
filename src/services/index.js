@@ -13,6 +13,10 @@ const points = require('./points/points.service.js');
 
 const uploadAvatarManager = require('./upload-avatar-manager/upload-avatar-manager.service.js');
 
+const uploadCoverManager = require('./upload-cover-manager/upload-cover-manager.service.js');
+
+const targets = require('./targets/targets.service.js');
+
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(managers);
@@ -26,4 +30,6 @@ module.exports = function (app) {
   app.configure(teamUpdates);
   app.configure(points);
   app.configure(uploadAvatarManager);
+  app.configure(uploadCoverManager);
+  app.configure(targets);
 };
