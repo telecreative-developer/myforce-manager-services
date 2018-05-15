@@ -1,10 +1,10 @@
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
-const Sequelize = require('sequelize');
-const DataTypes = Sequelize.DataTypes;
+const Sequelize = require('sequelize')
+const DataTypes = Sequelize.DataTypes
 
 module.exports = function(app) {
-  const sequelizeClient = app.get('sequelizeClient');
+  const sequelizeClient = app.get('sequelizeClient')
   const customers = sequelizeClient.define(
     'customers',
     {
@@ -37,6 +37,10 @@ module.exports = function(app) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      website: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       id: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -49,19 +53,19 @@ module.exports = function(app) {
     {
       hooks: {
         beforeCount(options) {
-          options.raw = true;
+          options.raw = true
         }
       }
     }
-  );
+  )
 
   // eslint-disable-next-line no-unused-vars
   customers.associate = function(models) {
     // Define associations here
-    customers.hasMany(models.users, { foreignKey: 'id', sourceKey: 'id' });
-    customers.hasMany(models.branches, { foreignKey: 'id_branch', sourceKey: 'id_branch' });
+    customers.hasMany(models.users, { foreignKey: 'id', sourceKey: 'id' })
+    customers.hasMany(models.branches, { foreignKey: 'id_branch', sourceKey: 'id_branch' })
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
-  };
+  }
 
-  return customers;
-};
+  return customers
+}
