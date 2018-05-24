@@ -17,6 +17,12 @@ const uploadCoverManager = require('./upload-cover-manager/upload-cover-manager.
 
 const targets = require('./targets/targets.service.js');
 
+const pipelineProducts = require('./pipeline-products/pipeline-products.service.js');
+
+const products = require('./products/products.service.js');
+
+const subproducts = require('./subproducts/subproducts.service.js');
+
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(managers);
@@ -32,4 +38,7 @@ module.exports = function (app) {
   app.configure(uploadAvatarManager);
   app.configure(uploadCoverManager);
   app.configure(targets);
+  app.configure(pipelineProducts);
+  app.configure(products);
+  app.configure(subproducts);
 };
